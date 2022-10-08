@@ -43,7 +43,13 @@ func getDocumentsDirectory() -> URL {
   return fileURL
 }
 
-var filename = "ordered-10e4.txt"
+let commands = CommandLine.arguments
+var filename = "random-ordered-10e5.txt"
+if(commands.count > 1) {
+  print("Commands \(commands)")
+  filename = commands[1]
+  print("Setting filename \(filename)")
+}
 //Arrary of Substrings
 var strings = readFile(filename:filename)
 var totalCount = 0
